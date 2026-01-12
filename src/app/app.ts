@@ -1,6 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProductCard } from './product-card/product-card';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ProductService } from './product-service';
 
 @Component({
   selector: 'app-root',
@@ -9,26 +11,6 @@ import { ProductCard } from './product-card/product-card';
   styleUrl: './app.css'
 })
 export class App {
-  products = [
-    {
-      title: 'Nike',
-      description: 'Dunk High Green Satin Sneakers',
-      price: 180,
-    },
-    {
-      title: 'Adidas',
-      description: 'Ultraboost 22 Shoes',
-      price: 150,
-    },
-    {
-      title: 'cumpus',
-      description: 'Ultraboost 22 Shoes',
-      price: 150,
-    },
-    {
-      title: 'puma',
-      description: 'Ultraboost 22 Shoes',
-      price: 150,
-    },
-  ];
+  producutService = inject(ProductService);
+  products = toSignal(this.producutService.getProducts());
 }
