@@ -1,5 +1,17 @@
-<div class="flex flex-wrap gap-1 min-h-screen">
+<!-- <div class="flex flex-wrap gap-1 min-h-screen">
   @for (item of products(); track $index) {
   <app-product-card [product]="item"></app-product-card>
   }
+</div> -->
+
+<div class="min-h-screen p-4">
+  <h1 class="text-2xl font-bold mb-4">Products</h1>
+
+  @let data = productss();
+
+  <div class="flex flex-wrap gap-4">
+    @for (item of data.products; track $index) {
+      <app-product-card [product]="item"></app-product-card>
+    }
+  </div>
 </div>

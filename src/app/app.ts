@@ -13,4 +13,5 @@ import { ProductService } from './product-service';
 export class App {
   producutService = inject(ProductService);
   products = toSignal(this.producutService.getProducts());
+  productss = toSignal(this.producutService.getProductss());
 }

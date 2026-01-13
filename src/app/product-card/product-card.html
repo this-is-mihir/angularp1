@@ -1,49 +1,56 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div class="max-w-sm bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+  <!-- Image -->
+  <img
+    src="{{product().thumbnail}}"
+    alt="photo"
+    class="w-full h-48 object-cover"
+  />
 
-<div class="flex items-center justify-start min-h-screen bg-gray-100 p-[1.5rem]">
-  <div class="bg-white rounded-[2.5rem] shadow-sm p-[1.5rem] w-full max-w-[28rem] border border-gray-100">
-    
-    <div class="relative bg-gray-50 rounded-[2rem] aspect-square flex flex-col items-center justify-center overflow-hidden">
-      
-      <div class="absolute top-0 left-0 right-0 flex justify-between items-start w-full p-[1.25rem]">
-        <span class="bg-white/90 backdrop-blur-sm px-[1rem] py-[0.5rem] rounded-full text-gray-700 text-[0.875rem] font-medium border border-gray-100 shadow-sm">
-          Best Seller
-        </span>
-        <div class="bg-white p-[0.5rem] rounded-full shadow-md flex items-center justify-center">
-          <span class="material-symbols-outlined text-red-500">
-            favorite
-          </span>
-        </div>
-      </div>
-
-      <div class="w-full p-[2rem]">
-        <img src="https://png.pngtree.com/png-clipart/20241210/original/pngtree-nike-shoes-transparent-png-image_17778783.png" alt="" class="w-full h-auto" />
-      </div>
-
-      <div class="absolute bottom-0 flex gap-[0.5rem] pb-[1.5rem]">
-        <span class="w-[0.625rem] h-[0.625rem] rounded-full bg-emerald-600"></span>
-        <span class="w-[0.625rem] h-[0.625rem] rounded-full bg-emerald-200"></span>
-        <span class="w-[0.625rem] h-[0.625rem] rounded-full bg-emerald-200"></span>
-      </div>
+  <!-- Content -->
+  <div class="p-4 space-y-3">
+    <!-- Title & Brand -->
+    <div>
+      <h2 class="text-lg font-semibold text-gray-800">
+        {{product().title}}
+      </h2>
+      <p class="text-sm text-gray-500">Brand: Essence</p>
     </div>
 
-    <div class="pt-[1.5rem] px-[0.5rem]">
-      <p class="text-emerald-600 text-[1.125rem] pb-[0.25rem]">
-        {{ product().title }}
-      </p>
-      
-      <h1 class="text-gray-900 text-[1.3rem] font-bold pb-[0.75rem]">
-        {{ product().description }}
-      </h1>
-      
-      <p class="text-gray-700 text-[1.25rem] font-medium pb-[2rem]">
-        ${{ product().price }}
-      </p>
+    <!-- Description -->
+    <p class="text-sm text-gray-600 line-clamp-3">
+      {{product().description}}
+    </p>
 
-      <button class="w-full bg-[#1c1c1c] text-white py-[1.1rem] rounded-full text-[1.125rem] font-semibold hover:bg-gray-800 transition-colors">
-        Buy Now
-      </button>
+    <!-- Price & Discount -->
+    <div class="flex items-center justify-between">
+      <span class="text-xl font-bold text-green-600">${{product().price}}</span>
+      <span class="text-sm text-red-500 font-medium">
+        {{product().discountPercentage}}% Off
+      </span>
     </div>
-    
+
+    <!-- Rating & Stock -->
+    <div class="flex items-center justify-between text-sm">
+      <span class="text-yellow-500 font-medium">
+        ⭐ {{product().rating}}
+      </span>
+      <span class="text-green-600 font-medium">
+        In Stock {{product().stock}}
+      </span>
+    </div>
+
+    <!-- Extra Info -->
+    <div class="text-xs text-gray-500 space-y-1">
+      <p>Warranty: {{product().warrantyInformation}}</p>
+      <p>Shipping: {{product().shippingInformation}}</p>
+      <p>SKU: BEA-ESS-ESS-001</p>
+    </div>
+
+    <!-- Button -->
+    <button
+      class="w-full mt-3 bg-black text-white py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition"
+    >
+      Add to Cart
+    </button>
   </div>
 </div>

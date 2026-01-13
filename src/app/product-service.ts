@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
 import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  http = inject(HttpClient);
+
   getProducts() {
     return of([{
       title: 'Nike',
@@ -22,5 +25,9 @@ export class ProductService {
       price: 150,
     },
     ])
+}
+
+getProductss(){
+  return this.http.get<any>('http://dummyjson.com/products');
 }
 }
