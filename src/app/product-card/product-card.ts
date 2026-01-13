@@ -8,6 +8,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './product-card.css',
 })
 export class ProductCard {
-  product = input<any>();
- 
+  product = input<any>(); 
 }
