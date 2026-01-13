@@ -30,4 +30,8 @@ export class ProductService {
 getProductss(){
   return this.http.get<any>('http://dummyjson.com/products');
 }
+
+getUsers(){
+  return this.http.get<any>('https://dummyjson.com/users');
+}
 }
