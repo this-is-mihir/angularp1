@@ -6,7 +6,7 @@
     <div class="relative flex items-center gap-5">
       <div class="relative group">
         <img
-          [src]="users().image"
+          [src]="user().image"
           class="w-20 h-20 rounded-2xl border-2 border-white/20 object-cover shadow-2xl transition-transform group-hover:scale-105"
         />
         <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-black rounded-full"></div>
@@ -14,13 +14,13 @@
       
       <div>
         <div class="flex items-center gap-2">
-          <h2 class="text-xl font-bold tracking-tight">{{users().firstName}} {{users().lastName}}</h2>
-          <span class="px-2 py-0.5 bg-red-500 text-[9px] font-black uppercase rounded-md tracking-tighter">{{users().role}}</span>
+          <h2 class="text-xl font-bold tracking-tight">{{user().firstName}} {{user().lastName}}</h2>
+          <span class="px-2 py-0.5 bg-red-500 text-[9px] font-black uppercase rounded-md tracking-tighter">{{user().role}}</span>
         </div>
-        <p class="text-xs text-gray-400 mt-0.5">@{{users().username}} • {{users().age}} yrs • {{users().gender}}</p>
+        <p class="text-xs text-gray-400 mt-0.5">@{{user().username}} • {{user().age}} yrs • {{user().gender}}</p>
         <div class="mt-2 flex gap-2">
-            <span class="text-[10px] bg-white/10 px-2 py-1 rounded-md text-gray-300">Blood: {{users().bloodGroup}}</span>
-            <span class="text-[10px] bg-white/10 px-2 py-1 rounded-md text-gray-300">Eye: {{users().eyeColor}}</span>
+            <span class="text-[10px] bg-white/10 px-2 py-1 rounded-md text-gray-300">Blood: {{user().bloodGroup}}</span>
+            <span class="text-[10px] bg-white/10 px-2 py-1 rounded-md text-gray-300">Eye: {{user().eyeColor}}</span>
         </div>
       </div>
     </div>
@@ -31,11 +31,11 @@
     <div class="grid grid-cols-2 gap-3">
         <div class="bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
             <p class="text-[10px] font-bold text-gray-400 uppercase">Height</p>
-            <p class="text-sm font-semibold text-gray-800">{{users().height}} <span class="text-xs text-gray-400 font-normal">cm</span></p>
+            <p class="text-sm font-semibold text-gray-800">{{user().height}} <span class="text-xs text-gray-400 font-normal">cm</span></p>
         </div>
         <div class="bg-white p-3 rounded-2xl border border-gray-100 shadow-sm">
             <p class="text-[10px] font-bold text-gray-400 uppercase">Weight</p>
-            <p class="text-sm font-semibold text-gray-800">{{users().weight}} <span class="text-xs text-gray-400 font-normal">kg</span></p>
+            <p class="text-sm font-semibold text-gray-800">{{user().weight}} <span class="text-xs text-gray-400 font-normal">kg</span></p>
         </div>
     </div>
 
@@ -45,12 +45,12 @@
       </h3>
       <div class="space-y-3">
           <div>
-            <p class="text-[11px] text-gray-500">{{users().company.title}}</p>
-            <p class="text-xs font-bold text-gray-800">{{users().company.name}} ({{users().company.department}})</p>
+            <p class="text-[11px] text-gray-500">{{user().company.title}}</p>
+            <p class="text-xs font-bold text-gray-800">{{user().company.name}} ({{user().company.department}})</p>
           </div>
           <div class="pt-2 border-t border-gray-50">
             <p class="text-[10px] text-gray-400 uppercase font-bold">University</p>
-            <p class="text-xs font-medium text-gray-700">{{users().university}}</p>
+            <p class="text-xs font-medium text-gray-700">{{user().university}}</p>
           </div>
       </div>
     </div>
@@ -62,20 +62,20 @@
       <div class="space-y-2.5">
           <div class="flex justify-between">
             <span class="text-xs text-gray-500">Email</span>
-            <span class="text-xs font-semibold text-gray-800">{{users().email}}</span>
+            <span class="text-xs font-semibold text-gray-800">{{user().email}}</span>
           </div>
           <div class="flex justify-between">
             <span class="text-xs text-gray-500">Phone</span>
-            <span class="text-xs font-semibold text-gray-800">{{users().phone}}</span>
+            <span class="text-xs font-semibold text-gray-800">{{user().phone}}</span>
           </div>
           <div class="pt-2 mt-2 border-t border-gray-50 grid grid-cols-2 gap-2">
             <div>
                 <p class="text-[9px] text-gray-400 uppercase font-bold">IP Address</p>
-                <p class="text-[11px] font-mono font-medium">{{users().ip}}</p>
+                <p class="text-[11px] font-mono font-medium">{{user().ip}}</p>
             </div>
             <div>
                 <p class="text-[9px] text-gray-400 uppercase font-bold">MAC Address</p>
-                <p class="text-[11px] font-mono font-medium text-gray-500">{{users().macAddress}}</p>
+                <p class="text-[11px] font-mono font-medium text-gray-500">{{user().macAddress}}</p>
             </div>
           </div>
           <p class="text-[10px] text-gray-400 font-medium truncate">UA: Chrome / Mac OS</p>
@@ -86,9 +86,9 @@
         <h3 class="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-2">Location</h3>
         <div class="flex items-start gap-3">
             <div class="flex-1">
-                <p class="text-xs font-bold text-gray-800">{{users().address.address}}</p>
-                <p class="text-xs text-gray-600">{{users().address.city}}, {{users().address.state}} ({{users().address.stateCode}}) {{users().address.postalCode}}</p>
-                <p class="text-[10px] text-gray-400 mt-1 italic font-mono">Lat: {{users().address.coordinates.lat}} | Lng: {{users().address.coordinates.lng}}</p>
+                <p class="text-xs font-bold text-gray-800">{{user().address.address}}</p>
+                <p class="text-xs text-gray-600">{{user().address.city}}, {{user().address.state}} ({{user().address.stateCode}}) {{user().address.postalCode}}</p>
+                <p class="text-[10px] text-gray-400 mt-1 italic font-mono">Lat: {{user().address.coordinates.lat}} | Lng: {{user().address.coordinates.lng}}</p>
             </div>
             <div class="bg-emerald-50 text-emerald-600 p-2 rounded-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor font-bold"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -100,26 +100,26 @@
         <div class="grid grid-cols-2 gap-3">
             <div class="bg-gray-900 text-white p-4 rounded-2xl shadow-lg">
                 <p class="text-[9px] font-bold text-gray-400 uppercase mb-2">Bank Detail</p>
-                <p class="text-xs font-bold">{{users().bank.cardType}}</p>
-                <p class="text-[10px] opacity-70 mt-1 truncate">{{users().bank.iban}}</p>
-                <p class="text-[10px] mt-2 font-mono text-orange-400">{{users().bank.cardExpire}} • {{users().bank.currency}}</p>
+                <p class="text-xs font-bold">{{user().bank.cardType}}</p>
+                <p class="text-[10px] opacity-70 mt-1 truncate">{{user().bank.iban}}</p>
+                <p class="text-[10px] mt-2 font-mono text-orange-400">{{user().bank.cardExpire}} • {{user().bank.currency}}</p>
             </div>
             <div class="bg-white border border-gray-200 p-4 rounded-2xl">
                 <p class="text-[9px] font-bold text-orange-500 uppercase mb-2">Crypto</p>
-                <p class="text-xs font-bold text-gray-800">{{users().crypto.coin}}</p>
-                <p class="text-[10px] text-gray-400 truncate mt-1">{{users().crypto.wallet}}</p>
-                <span class="mt-2 inline-block px-2 py-0.5 bg-gray-100 text-[9px] rounded text-gray-600">{{users().crypto.network}}</span>
+                <p class="text-xs font-bold text-gray-800">{{user().crypto.coin}}</p>
+                <p class="text-[10px] text-gray-400 truncate mt-1">{{user().crypto.wallet}}</p>
+                <span class="mt-2 inline-block px-2 py-0.5 bg-gray-100 text-[9px] rounded text-gray-600">{{user().crypto.network}}</span>
             </div>
         </div>
         <div class="bg-gray-100/50 p-3 rounded-2xl flex justify-between items-center px-4">
             <div>
                 <p class="text-[9px] text-gray-400 font-bold uppercase">EIN</p>
-                <p class="text-xs font-bold text-gray-700">{{users().ein}}</p>
+                <p class="text-xs font-bold text-gray-700">{{user().ein}}</p>
             </div>
             <div class="h-6 w-[1px] bg-gray-200"></div>
             <div>
                 <p class="text-[9px] text-gray-400 font-bold uppercase text-right">SSN</p>
-                <p class="text-xs font-bold text-gray-700 text-right">{{users().ssn}}</p>
+                <p class="text-xs font-bold text-gray-700 text-right">{{user().ssn}}</p>
             </div>
         </div>
     </div>

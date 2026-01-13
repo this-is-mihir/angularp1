@@ -7,5 +7,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './user-card.css',
 })
 export class UserCard {
-users = input<any>(); 
+user = input<any>(); 
 }

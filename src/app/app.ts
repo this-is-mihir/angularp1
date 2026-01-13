@@ -15,5 +15,5 @@ export class App {
   producutService = inject(ProductService);
   products = toSignal(this.producutService.getProducts());
   productss = toSignal(this.producutService.getProductss());
-  users = toSignal(this.producutService.getUsers());
+  user = toSignal(this.producutService.getUsers());
 }
