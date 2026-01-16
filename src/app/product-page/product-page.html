@@ -1,0 +1,9 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+
+     
+      @let data = productss();
+      @for (item of data.products; track $index) {
+        <app-product-card [product]="item"></app-product-card>
+      }
+
+    </div>

@@ -4,7 +4,7 @@
   }
 </div> -->
 
-<div class="min-h-screen bg-gray-100 p-8 font-sans">
+<!-- <div class="min-h-screen bg-gray-100 p-8 font-sans">
   
   <input type="radio" name="view-toggle" id="show-products" class="hidden peer/products" checked />
   <input type="radio" name="view-toggle" id="show-users" class="hidden peer/users" />
@@ -30,32 +30,16 @@
   <div class="hidden peer-checked/products:block animate-in fade-in slide-in-from-bottom-4 duration-500">
     <h1 class="text-3xl font-black text-gray-800 mb-8 text-center tracking-tight">PRODUCTS</h1>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
-
-      <!-- logic -->
-      @let data = productss();
-      @for (item of data.products; track $index) {
-        <app-product-card [product]="item"></app-product-card>
-      }
-
-    </div>
+    
   </div>
 
   <div class="hidden peer-checked/users:block animate-in fade-in slide-in-from-bottom-4 duration-500">
     <h1 class="text-3xl font-black text-gray-800 mb-8 text-center tracking-tight">USERS</h1>
     
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-
-      <!-- logic -->
-      @let userData = user();
-      @for (item of userData.users; track $index) {
-        <div class="w-full flex justify-center">
-          <app-user-card [user]="item"></app-user-card>
-        </div>
-      }
-
-
-    </div>
+    
   </div>
 
-</div>
+</div> -->
+
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
