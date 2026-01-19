@@ -34,4 +34,8 @@ getProductss(){
 getUsers(){
   return this.http.get<any>('https://dummyjson.com/users');
 }
+
+getCart(){
+  return this.http.get<any>('https://dummyjson.com/carts/1');
+}
 }

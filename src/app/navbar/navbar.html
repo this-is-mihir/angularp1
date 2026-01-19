@@ -1,8 +1,25 @@
-<div class="pl-6 p-10">
-    <nav>
-  <a routerLink="/user">Users</a>
-  
-  <a class="pl-10" routerLink="/products">Products</a>
+<div class="pb-10">
+  <nav class="bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-center ">
+    <div class="flex items-center gap-2">
+      <a routerLink="/user" 
+         routerLinkActive="ring bg-blue-100 text-blue-600"
+         class="px-4 py-2 rounded-md font-medium text-gray-600 hover:bg-gray-100 transition-colors">
+        Users
+      </a>
+      
+      <a routerLink="/products" 
+         routerLinkActive="ring bg-blue-100 text-blue-600"
+         class="px-4 py-2 rounded-md font-medium text-gray-600 hover:bg-gray-100 transition-colors">
+        Products
+      </a>
+
+      <a routerLink="/cart" 
+         routerLinkActive="ring bg-blue-100 text-blue-600"
+         class="px-4 py-2 rounded-md font-medium text-gray-600 hover:bg-gray-100">
+        Cart
+      </a>
+    </div>
+  </div>
 </nav>
 </div>
-
