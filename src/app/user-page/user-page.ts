@@ -10,6 +10,7 @@ import { ProductService } from '../product-service';
   styleUrl: './user-page.css',
 })
 export class UserPage {
+  
   producutService = inject(ProductService);
   user = toSignal(this.producutService.getUsers());
 

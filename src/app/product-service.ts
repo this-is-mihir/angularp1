@@ -38,4 +38,12 @@ getUsers(){
 getCart(){
   return this.http.get<any>('https://dummyjson.com/carts/1');
 }
+
+banklogin(payload:any){
+  return this.http.get<any>(`https://ifsc.razorpay.com/${payload.ifscCode}`);
+}
+
+login(payload:any){
+  return this.http.post<any>('https://dummyjson.com/auth/login', payload);
+}
 }

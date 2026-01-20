@@ -1,0 +1,79 @@
+<div class="flex items-center justify-center min-h-screen p-6">
+
+  <div class="w-full max-w-md bg-white border border-slate-200 rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
+
+    <div class="flex flex-col gap-2 p-4 text-center">
+      <h2 class="text-3xl font-black text-slate-800 tracking-tight">Welcome Back</h2>
+      <p class="text-slate-500 font-medium">Please enter your details to sign in</p>
+    </div>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-6 p-2"
+    >
+
+      <div class="flex flex-col gap-2 p-1">
+        <label class="text-sm font-bold text-slate-700 px-1">
+          Username
+        </label>
+        <input
+          type="text"
+          placeholder="example123"
+          formControlName="username"
+          class="inline-block w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all duration-300"
+        />
+        @if (loginForm.get('username')?.errors?.['required'] && loginForm.get('username')?.touched) {
+          <span class="p-0 text-red-500 text-[0.7rem] font-black uppercase tracking-widest italic">Username Required *</span>
+        }
+
+      </div>
+
+      <div class="flex flex-col gap-2 p-1">
+        <div class="flex justify-between items-center px-1">
+          <label class="text-sm font-bold text-slate-700">
+            Password
+          </label>
+          <a href="#" class="text-xs font-bold text-blue-600 hover:text-blue-700">
+            Forgot?
+          </a>
+        </div>
+        <input
+          type="password"
+          placeholder="••••••••"
+          formControlName="password"
+          class="w-full p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 outline-none focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all duration-300"
+        />
+        @if (loginForm.get('password')?.errors?.['required'] &&  loginForm.get('password')?.touched)  {
+          <span class="p-1 text-red-500 text-[0.7rem] font-black uppercase tracking-widest italic">Password Required *</span>
+        }
+        
+      </div>
+
+      <div class="flex flex-col gap-4 p-2">
+        <button
+          type="submit"
+          
+          class="w-full p-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 active:scale-95 transition-all duration-300 shadow-xl shadow-slate-200 disabled:opacity-50"
+        >
+          LOGIN
+        </button>
+      </div>
+
+    </form>
+    
+
+    <div class="text-center p-6">
+      <p class="text-slate-500 text-sm">
+        Don't have an account?
+        <span
+          routerLink="/signup"
+          class="text-blue-600 font-bold cursor-pointer hover:underline transition-all"
+        >
+          Create one
+        </span>
+      </p>
+    </div>
+
+  </div>
+</div>

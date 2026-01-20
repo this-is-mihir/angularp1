@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-card',
@@ -8,4 +9,5 @@ import { Component, input } from '@angular/core';
 })
 export class UserCard {
 user = input<any>(); 
+
 }
