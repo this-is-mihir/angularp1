@@ -12,7 +12,7 @@ import { ProductService } from '../../product-service';
   styleUrl: './bank-card.css',
 })
 export class BankCard {
-  productsService = inject(ProductService);
+productsService = inject(ProductService);
 bankCard = input<any>(); 
 
 fb = inject(FormBuilder);
