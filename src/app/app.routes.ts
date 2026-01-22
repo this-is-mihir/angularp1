@@ -6,6 +6,7 @@ import { LoginPage } from './auth/login-page/login-page';
 import { SignupPage } from './auth/signup-page/signup-page';
 import { BankPage } from './bank/bank-page/bank-page';
 import { CounterCard } from './prac-signal/counter-card/counter-card';
+import { AddProductPage } from './prac-signal/add-product-page/add-product-page';
 
 export const routes: Routes = [
   { path: 'user', component: UserPage },
@@ -15,4 +16,5 @@ export const routes: Routes = [
   { path: 'login', component: LoginPage },  
   { path: 'bank', component: BankPage },
   { path: 'counter', component: CounterCard },
+  { path: 'add-product', component: AddProductPage },
 ];

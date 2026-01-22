@@ -46,4 +46,9 @@ banklogin(payload:any){
 login(payload:any){
   return this.http.post<any>('https://dummyjson.com/auth/login', payload);
 }
+
+addProduct(payload: any) {
+  return this.http.post<any>('https://dummyjson.com/products/add',payload);
+}
+
 }
