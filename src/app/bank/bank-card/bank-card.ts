@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators, ɵInternalFormsSharedModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 import { ProductService } from '../../product-service';
 
