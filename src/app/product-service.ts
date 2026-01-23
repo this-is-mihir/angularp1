@@ -6,49 +6,48 @@ import { of } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductService {
+  deleteService(data: any) {
+    throw new Error('Method not implemented.');
+  }
   http = inject(HttpClient);
 
+ 
+
+  getProductss() {
+    return this.http.get<any>('http://dummyjson.com/products');
+  }
+
+  getUsers() {
+    return this.http.get<any>('https://dummyjson.com/users');
+  }
+
+  getCart() {
+    return this.http.get<any>('https://dummyjson.com/carts/1');
+  }
+
+  banklogin(payload: any) {
+    return this.http.get<any>(`https://ifsc.razorpay.com/${payload.ifscCode}`);
+  }
+
+  login(payload: any) {
+    return this.http.post<any>('https://dummyjson.com/auth/login', payload);
+  }
+
+  addProduct(payload: any) {
+    return this.http.post<any>('https://dummyjson.com/products/add', payload);
+  }
+
+ 
   getProducts() {
-    return of([{
-      title: 'Nike',
-      description: 'Dunk High Green Satin Sneakers',
-      price: 180,
-    },
-    {
-      title: 'Adidas',
-      description: 'Ultraboost 22 Shoes',
-      price: 150,
-    },
-    {
-      title: 'cumpus222',
-      description: 'Ultraboost 22 Shoes',
-      price: 150,
-    },
-    ])
+  return this.http.get<any>('http://localhost:3000/products');
 }
 
-getProductss(){
-  return this.http.get<any>('http://dummyjson.com/products');
+addProducts(data: any) {
+  return this.http.post<any>('http://localhost:3000/products', data);
 }
 
-getUsers(){
-  return this.http.get<any>('https://dummyjson.com/users');
-}
-
-getCart(){
-  return this.http.get<any>('https://dummyjson.com/carts/1');
-}
-
-banklogin(payload:any){
-  return this.http.get<any>(`https://ifsc.razorpay.com/${payload.ifscCode}`);
-}
-
-login(payload:any){
-  return this.http.post<any>('https://dummyjson.com/auth/login', payload);
-}
-
-addProduct(payload: any) {
-  return this.http.post<any>('https://dummyjson.com/products/add',payload);
+deleteProduct(id: string) {
+  return this.http.delete<any>(`http://localhost:3000/products/${id}`);
 }
 
 }
