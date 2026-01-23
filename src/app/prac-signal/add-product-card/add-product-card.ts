@@ -12,7 +12,6 @@ import { ProductService } from '../../product-service';
 export class AddProductCard {
 productsService = inject(ProductService);
   fb = inject(FormBuilder);
-
   productData: any;
 
 
