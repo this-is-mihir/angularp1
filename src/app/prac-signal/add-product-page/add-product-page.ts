@@ -1,8 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 import { ProductService } from '../../product-service';
 import { AddProductCard } from "../add-product-card/add-product-card";
+import { ActivatedRoute, Router, RouterLink } from "@angular/router";
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-add-product-page',
@@ -15,21 +17,19 @@ productsService = inject(ProductService);
   fb = inject(FormBuilder);
 
   products: any[] = [];
+  router = inject(Router);
+  route = inject(ActivatedRoute); 
+ paramsMap = toSignal(this.route.paramMap, {  //initialvalue null set 
+  initialValue: null,
+});
+  productId = computed(() => this.paramsMap()?.get('id')); //add ? mark 
 
   productForm = this.fb.group({
     title: ['', Validators.required],
     description: ['', Validators.required],
     price: ['', Validators.required],
   });
-
-  constructor() {
-    this.loadProducts();
-  }
-
-  async loadProducts() {
-    const res = await firstValueFrom(this.productsService.getProducts());
-    this.products = res;
-  }
+  
 
   async addProducts() {
     if (this.productForm.invalid) {
@@ -45,12 +45,11 @@ productsService = inject(ProductService);
 
     this.products.push(res);
     this.productForm.reset();
+
+    this.router.navigate(['/lists']);
   }
 
-  async deleteProduct(id: string) {
-    await firstValueFrom(this.productsService.deleteProduct(id));
-    this.products = this.products.filter(p => p._id !== id);
-  }
+
 
 }
 

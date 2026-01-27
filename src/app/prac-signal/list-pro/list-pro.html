@@ -1,0 +1,60 @@
+<h1 class="text-red-600 text-3xl text-center p-4">
+  LIST PRODUCTS LOADED
+</h1>
+
+<div class="p-4">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center"
+  >
+    @for (product of products(); track product._id) {
+    <div
+      class="bg-white w-full max-w-xs h-[340px] rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 p-5 flex flex-col justify-between"
+    >
+      <!-- CONTENT -->
+      <div class="space-y-2">
+        <h3 class="text-lg font-bold text-gray-800 line-clamp-1">
+          {{ product.title }}
+        </h3>
+
+        <p class="text-gray-600 text-sm line-clamp-3">
+          {{ product.description }}
+        </p>
+
+        <p class="text-xl font-extrabold text-green-600">
+          ₹ {{ product.price }}
+        </p>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="flex gap-2 pt-4">
+        <button
+          [routerLink]="product._id"
+          class="flex-1 bg-blue-500 hover:bg-blue-600 hover:scale-[1.02] transition text-white py-2 rounded-xl"
+          type="button"
+        >
+          Update
+        </button>
+
+        <button
+          routerLink="add"
+          class="flex-1 bg-green-500 hover:bg-green-600 hover:scale-[1.02] transition text-white py-2 rounded-xl"
+          type="button"
+        >
+          Add
+        </button>
+
+        <button
+          class="flex-1 bg-red-500 hover:bg-red-600 hover:scale-[1.02] transition text-white py-2 rounded-xl"
+          type="button"
+          (click)="deleteProduct(product._id)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+
+
+<!-- <router-outlet></router-outlet> -->
