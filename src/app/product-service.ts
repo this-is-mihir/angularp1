@@ -50,4 +50,12 @@ deleteProduct(id: string) {
   return this.http.delete<any>(`http://localhost:3000/products/${id}`);
 }
 
+getProductById(id: string) {
+  return this.http.get<any>(`http://localhost:3000/products/${id}`);
+}
+
+updateProduct(id: string, data: any) {
+  return this.http.put<any>(`http://localhost:3000/products/${id}`, data);
+}
+
 }
